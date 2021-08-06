@@ -6,6 +6,7 @@ services:
     hostname: "consul"
     command: "agent -dev -client 0.0.0.0"
     ports:
+      - "8300:8300"
       - "8400:8400"
       - "8500:8500"
       - "8600:53/udp"
@@ -37,9 +38,9 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - 'jenkins-data:/var/jenkins_home'
+
 volumes:
   jenkins-data:
     external:
       name: jenkins-data
-
 
